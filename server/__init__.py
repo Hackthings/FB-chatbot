@@ -67,6 +67,7 @@ def process_mode(id, text, mode):
 
 @app.route('/', methods=['POST'])
 def handle_incoming_message():
+    global AUTHORIZATION
     data = request.json
     messaging = data['entry'][0]['messaging'][0]
     sender_id = messaging['sender']['id']
