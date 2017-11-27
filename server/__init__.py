@@ -74,9 +74,9 @@ def handle_incoming_message():
     bot.set_sender_action(sender_id, 'mark_seen')
     bot.set_sender_action(sender_id, 'typing_on')
 
-    print('before auth: ', os.environ['AUTHORICATION'])
-    os.environ['AUTHORICATION'] = util.get_access_token()
-    print('after auth: ', os.environ['AUTHORICATION'])
+    print('before auth: ', os.environ['AUTHORIZATION'])
+    os.environ['AUTHORIZATION'] = util.get_access_token()
+    print('after auth: ', os.environ['AUTHORIZATION'])
 
     # handle first conversation
     if 'postback' in messaging:
