@@ -14,6 +14,7 @@ from database.database import db
 
 app = Flask(__name__)
 
+AUTHORIZATION = '456785555'
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
 bot = Bot(ACCESS_TOKEN)
 
@@ -75,7 +76,7 @@ def handle_incoming_message():
     bot.set_sender_action(sender_id, 'typing_on')
 
     print('before auth1: ', AUTHORIZATION)
-    AUTHORIZATION = "888888"
+    AUTHORIZATION = '888888'
     print('after auth2: ', AUTHORIZATION)
 
     print('before auth: ', os.environ['AUTHORIZATION'])
