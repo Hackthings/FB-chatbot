@@ -91,7 +91,9 @@ def get_access_token():
 
     response = requests.get('https://api.kkbox.com/oauth2/token', params=payload, headers=headers)
     json = response.json()
-    return json['token_type'] + json['access_token']
+    print('json: ', json)
+    # return json['token_type'] + json['access_token']
+    return '123456'
 
 def set_subtitle(type,element):
     if type.value == 'track':
