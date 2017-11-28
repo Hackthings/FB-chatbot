@@ -91,7 +91,7 @@ def get_access_token():
     headers = {'Authorization': os.environ['USER_AUTHORIZATION'],
             'Content-type': 'application/x-www-form-urlencoded'}
 
-    response = requests.post('https://api.kkbox.com/oauth2/token', data=payload, headers=headers)
+    response = requests.post('https://api.kkbox.com/oauth2/token', data=json.dumps(payload), headers=headers)
     json = response.json()
     print('json: ', json)
     # return json['token_type'] + json['access_token']
