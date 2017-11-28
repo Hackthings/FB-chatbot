@@ -2,6 +2,7 @@
 
 import os
 import enum
+import json
 import requests
 from database.database import db
 
@@ -92,8 +93,8 @@ def get_access_token():
             'Content-type': 'application/x-www-form-urlencoded'}
 
     response = requests.post('https://api.kkbox.com/oauth2/token', data=json.dumps(payload), headers=headers)
-    json = response.json()
-    print('json: ', json)
+    responseJson = response.json()
+    print('json: ', responseJson)
     # return json['token_type'] + json['access_token']
     return '123456'
 
