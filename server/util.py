@@ -86,8 +86,10 @@ def search(inquiry, type, territory):
 
 def get_access_token():
     # get access token 
-    payload = {'grant_type': 'client_credentials'}
-    headers = {'Authorization': os.environ['USER_AUTHORIZATION']}
+    payload = {'grant_type': 'client_credentials', 
+            'scope': 'user_profile user_territory'}
+    headers = {'Authorization': os.environ['USER_AUTHORIZATION'],
+            'Content-type': 'application/x-www-form-urlencoded'}
 
     response = requests.post('https://api.kkbox.com/oauth2/token', data=payload, headers=headers)
     json = response.json()
